@@ -1,5 +1,5 @@
-Cliente para servicios web de SURBTC en Python
-==============================================
+Cliente para servicios web de Buda.com (ex SURBTC) en Python
+============================================================
 
 .. image:: https://badge.fury.io/py/surbtc.svg
     :target: https://pypi.python.org/pypi/surbtc
