@@ -31,7 +31,7 @@ Clase principal con el cliente de SURBTC
 """
 class Client:
 
-    _url = 'https://www.surbtc.com' # URL base para las llamadas a la API
+    _url = 'https://www.buda.com' # URL base para las llamadas a la API
     _version = 'api/v2' # Versión de la API con la que funciona este SDK
     default_per = 300 # Límite por defecto a usar en consultas paginadas (se usa el máximo por defecto)
     api_key = None # API key para autenticación
@@ -43,7 +43,7 @@ class Client:
             self.api_key = api_key
             self.api_secret = api_secret
         if test :
-            self._url = 'https://stg.surbtc.com'
+            self._url = 'https://stg.buda.com'
 
     def getMarket(self, market) :
         return Market(market, self)
