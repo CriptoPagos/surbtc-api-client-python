@@ -10,7 +10,7 @@ Cliente para servicios web de Buda.com (ex SURBTC) en Python
 .. image:: https://img.shields.io/pypi/l/surbtc.svg
     :target: https://raw.githubusercontent.com/CriptoPagos/surbtc-api-client-python/master/COPYING
 
-Cliente para realizar la integración con los servicios web de SURBTC desde Python.
+Cliente para realizar la integración con los servicios web de Buda.com (ex SURBTC) desde Python.
 
 Este código está liberado bajo licencia `LGPL <http://www.gnu.org/licenses/lgpl-3.0.en.html>`_.
 O sea, puede ser utilizado tanto en software libre como en software privativo.
