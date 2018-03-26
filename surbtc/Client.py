@@ -67,14 +67,20 @@ class Client:
             raise requests.ConnectionError('No fue posible obtener el ticker del mercado ' + market + ': ' + body['message'])
         return body['ticker']
 
-    def getQuote (self, market, amount) :
-        data = {'type': 'bid_given_size', 'amount': amount}
+    def getQuote (self, market, amount, type_) :
+        data = {'type': type_, 'amount': amount}
         url = self.createUrl('/markets/' + market + '/quotations')
         self.response = self.consume(url, data=data)
         body = self.response.json()
         if self.response.status_code != 201 :
             raise requests.ConnectionError('No fue posible obtener una cotiacion del mercado ' + market + ': ' + body['message'])
         return body['quotation']
+
+    def getBidQuote (self, market, amount) :
+        return self.getQuote(market, amount, 'bid_given_size')
+
+    def getAskQuote(self, market, amount) :
+        return self.getQuote(market, amount, 'ask_given_size')
 
     def getBook (self, market) :
         url = self.createUrl('/markets/' + market + '/order_book')
