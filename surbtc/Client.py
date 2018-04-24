@@ -27,7 +27,7 @@ from .Currency import Currency
 """
 Clase principal con el cliente de SURBTC
 @author Esteban De La Fuente Rubio, DeLaF (esteban[at]sasco.cl)
-@version 2017-11-26
+@version 2018-04-24
 """
 class Client:
 
@@ -73,14 +73,8 @@ class Client:
         self.response = self.consume(url, data=data)
         body = self.response.json()
         if self.response.status_code != 201 :
-            raise requests.ConnectionError('No fue posible obtener una cotiacion del mercado ' + market + ': ' + body['message'])
+            raise requests.ConnectionError('No fue posible obtener una cotización del mercado ' + market + ': ' + body['message'])
         return body['quotation']
-
-    def getBidQuote (self, market, amount) :
-        return self.getQuote(market, amount, 'bid_given_size')
-
-    def getAskQuote(self, market, amount) :
-        return self.getQuote(market, amount, 'ask_given_size')
 
     def getBook (self, market) :
         url = self.createUrl('/markets/' + market + '/order_book')

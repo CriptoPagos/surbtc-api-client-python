@@ -36,7 +36,7 @@ setup(
     name='surbtc',
 
     # Versions should comply with PEP440
-    version='1.0.2',
+    version='1.1.0',
 
     description='Cliente para servicios web de SURBTC',
     long_description="\n"+long_description,

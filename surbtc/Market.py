@@ -22,7 +22,7 @@ Debería haber recibido una copia de la GNU Lesser General Public License
 """
 Clase que representa un mercado genérico de SURBTC
 @author Esteban De La Fuente Rubio, DeLaF (esteban[at]sasco.cl)
-@version 2017-11-26
+@version 2018-04-24
 """
 class Market :
 
@@ -36,6 +36,12 @@ class Market :
 
     def getTicker (self) :
         return self.client.getTicker(self._market)
+
+    def getBidQuote (self, amount) :
+        return self.client.getQuote(self._market, amount, 'bid_given_size')
+
+    def getAskQuote(self, amount) :
+        return self.client.getQuote(self._market, amount, 'ask_given_size')
 
     def getBook (self) :
         return self.client.getBook(self._market)
